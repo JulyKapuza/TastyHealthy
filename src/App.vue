@@ -1,17 +1,9 @@
 <script setup>
-
-
+import DefaultLayout from "@/layouts/DefaultLayout.vue";
 </script>
 
 <template>
-  <header>
-  </header>
-
-  <main>
-    hello
-  </main>
+  <DefaultLayout> </DefaultLayout>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
