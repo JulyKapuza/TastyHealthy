@@ -8,7 +8,7 @@ const year = computed(() => {
 </script>
 <template>
   <footer>
-    <div class="3xl:container xl:px-4 w-full bg-green">
+    <div class="3xl:container xl:px-4 w-full">
       <div
         class="flex flex-col items-center md:flex-row bg-panel py-4 px-4 border-t xl:border-x border-white/[.1]"
       >

@@ -2,6 +2,9 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts}'],
   theme: {
+    fontFamily: {
+      'logo': ['Permanent Marker']
+    },
     screens: {
       sm: '640px',
       // => @media (min-width: 640px) { ... }
@@ -25,9 +28,15 @@ module.exports = {
       green: '#64ff86',
       red: '#ff5956',
       panel: 'rgb(255 255 255 / 10%)',
-      orange: '#ffc107'
+      orange: '#ffc107',
+      gradient: 'linear-gradient(121.17deg,#263238,#37474f 94.02%)',
+      main: "#0891b2",
+
     },
     extend: {
+      gradient: {
+        background: 'linear-gradient(121.17deg,#263238,#37474f 94.02%)'
+      },
       container: {
         center: true,
         padding: '16px'
