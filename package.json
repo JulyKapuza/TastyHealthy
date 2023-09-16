@@ -8,8 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/js": "^7.2.96",
     "@vueuse/core": "^10.4.1",
     "pinia": "^2.1.6",
+    "v-wave": "^1.5.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
