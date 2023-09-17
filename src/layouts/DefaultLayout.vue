@@ -1,7 +1,7 @@
 <script setup>
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
-import Recipe from "../components/Recipe.vue";
+
 </script>
 <template>
   <div
@@ -9,7 +9,6 @@ import Recipe from "../components/Recipe.vue";
   >
     <Header />
     <main class="grow flex flex-col pt-4">
-      <!-- <Recipe /> -->
       <slot></slot>
     </main>
     <Footer />

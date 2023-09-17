@@ -1,19 +1,19 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
-  history: createWebHistory('/'),
+  history: createWebHistory("/"),
   routes: [
-  {
-      path: '/',
-      name: 'home',
-      component: () => import('../views/HomeView.vue'),
+    {
+      path: "/",
+      name: "home",
+      component: () => import("../views/HomeView.vue"),
     },
     {
-      path: '/recipe/:id',
-      name: 'recipe',
-      component: () => import('../views/RecipeView.vue'),
+      path: "/recipe/:query/:id",
+      name: "recipe",
+      component: () => import("../views/RecipeView.vue"),
     },
-  ]
-})
+  ],
+});
 
-export default router
+export default router;
