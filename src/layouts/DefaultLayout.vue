@@ -9,7 +9,8 @@ import Recipe from "../components/Recipe.vue";
   >
     <Header />
     <main class="grow flex flex-col pt-4">
-      <Recipe />
+      <!-- <Recipe /> -->
+      <slot></slot>
     </main>
     <Footer />
   </div>

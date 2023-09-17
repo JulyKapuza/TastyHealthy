@@ -43,12 +43,12 @@ watch(query, () => {
               </div></button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-3">
-                <div v-for="item in recipeStore.recipe" :key="item.recipe.yield" class="flex">
-                    <Item :img="item.recipe.image" :title="item.recipe.label" :cuisineType="item.recipe.cuisineType[0]" :data="item" @click-btn="modalOpen(item)"  />   
+                <div v-for="(item, i) in recipeStore.recipe" :key="item.recipe.yield" class="flex">
+                    <Item :img="item.recipe.image" :title="item.recipe.label" :cuisineType="item.recipe.cuisineType[0]" :data="item" :index="i" @click-btn="modalOpen(item)"  />   
                 </div>  
             </div>
             
-             <RecipeModal :key-modal="openModalKey" @modal-close="openModalKey = ''" :selectedItem="selectedItem"/>
+             <RecipeModal :is-open="openModalKey" @modal-close=" openModalKey = false" :selectedItem="selectedItem"/>
         </div>
        
 </template>

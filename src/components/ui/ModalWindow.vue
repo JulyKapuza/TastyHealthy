@@ -30,8 +30,7 @@ onClickOutside(modal, () => {
             <div ref="modal" class="bg-gradient h-fit relative w-full md:w-auto">
                 <div class="flex justify-center items-center gap-5 px-4 bg-panel border border-white/[.1]"
                     :class="{ '!justify-end py-2': !title }">
-                    <span v-if="title" class="flex grow border-e border-white/[.1] py-4 text-base font-medium">{{ $t(title)
-                    }}</span>
+                    <span v-if="title" class="flex grow border-e border-white/[.1] py-4 text-base font-medium">{{title   }}</span>
                     <MdIcon name="window-close" width="26" height="26" class="cursor-pointer hover:text-main"
                         @click="closeModal" />
                 </div>

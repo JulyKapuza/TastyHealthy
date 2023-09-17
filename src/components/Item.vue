@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 const props = defineProps({
     img: {
         type: String,
@@ -9,9 +10,12 @@ const props = defineProps({
         default: ''
     },
     cuisineType: {
-       type: String,
-        default: '' 
-    }, 
+        type: String,
+        default: ''
+    },
+    index: {
+         type: Number,
+    },
     data: {
         type: Object
     }
@@ -30,8 +34,13 @@ const clickBtn = () => {
             {{ title }}
         </div>
         <div class="flex">
-            <div class="grow border-e border-white/[.1] p-4 text-white/[.3] text-sm">Cuisine type: {{ cuisineType }}</div>
-            <button class="px-2 text-green" @click="clickBtn(data)">More</button>
+            <div class="grow border-e border-white/[.1] p-4 text-white/[.3] text-sm">Cuisine type: {{ cuisineType }}
+             <RouterLink :to="`/recipe/${index}`" class="p-3 text-main hover:opacity-70"
+              >View more
+            </RouterLink>
+            </div>
+           
+            <button class="px-2 text-green" @click="clickBtn(data)">Short info</button>
         </div>
     </div>
    
