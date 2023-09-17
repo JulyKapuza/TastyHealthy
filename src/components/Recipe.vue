@@ -2,10 +2,12 @@
 import { ref, watch } from 'vue'
 import Item from '../components/Item.vue'
 import Field from '../components/ui/Field.vue'
+import RecipeModal from '../components/RecipeModal.vue'
 import { useRecipeStore } from '../stores/recipe.js'
 
 let query = ref('')
-
+const openModalKey = ref(false)
+let selectedItem = ref([])
 const recipeStore = useRecipeStore()
 recipeStore.getRecipe(query.value)
 
@@ -15,6 +17,14 @@ const search = () => {
     }
    
 }
+const modalOpen = (data) => {
+    console.log('data', data.recipe.ingredients
+    )
+    selectedItem = data.recipe.ingredients
+        openModalKey.value = true
+    
+}
+
 
 watch(query, () => {
    if (query.value === '') {
@@ -34,10 +44,13 @@ watch(query, () => {
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-3">
                 <div v-for="item in recipeStore.recipe" :key="item.recipe.yield" class="flex">
-                    <Item :img="item.recipe.image" :title="item.recipe.label" :cuisineType="item.recipe.cuisineType[0]"   />   
+                    <Item :img="item.recipe.image" :title="item.recipe.label" :cuisineType="item.recipe.cuisineType[0]" :data="item" @click-btn="modalOpen(item)"  />   
                 </div>  
             </div>
+            
+             <RecipeModal :key-modal="openModalKey" @modal-close="openModalKey = ''" :selectedItem="selectedItem"/>
         </div>
+       
 </template>
 
 <style lang="scss" scoped></style>

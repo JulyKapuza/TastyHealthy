@@ -11,8 +11,17 @@ const props = defineProps({
     cuisineType: {
        type: String,
         default: '' 
+    }, 
+    data: {
+        type: Object
     }
 })
+
+const emits = defineEmits(['clickBtn'])
+
+const clickBtn = () => {
+    emits('clickBtn')
+}
 </script>
 <template>
     <div class="flex flex-col border border-white/[.1]">
@@ -22,9 +31,10 @@ const props = defineProps({
         </div>
         <div class="flex">
             <div class="grow border-e border-white/[.1] p-4 text-white/[.3] text-sm">Cuisine type: {{ cuisineType }}</div>
-            <button class="px-2 text-green">More</button>
+            <button class="px-2 text-green" @click="clickBtn(data)">More</button>
         </div>
     </div>
+   
 </template>
 
 <style lang="scss" scoped></style>
