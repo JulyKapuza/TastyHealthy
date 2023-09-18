@@ -34,7 +34,10 @@ watch(query, () => {
 
 <template>
   <div class="3xl:container xl:px-4">
-    <div class="relative">
+    <div class="text-[20px] flex items-center justify-center mb-5">
+      <span class="font-logo text-[50px]">Tasty&Healthy</span> - {{$t('quick_healthy')}}
+    </div>
+    <div class="relative mt-5">
       <Field v-model="query" @keydown.enter="search" :label="$t('enter')" />
       <button @click="search">
         <div class="absolute top-1/4 -translate-y-1/3 end-40 text-white/[.3]">

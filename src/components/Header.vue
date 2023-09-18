@@ -13,7 +13,7 @@ const localeChange = (newLocale) => {
 </script>
 <template>
   <header
-    class="sticky top-0 pt-0 xl:-top-5 xl:pt-5 z-40 3xl:container xl:px-4"
+    class="sticky top-0 pt-0 xl:-top-5 xl:pt-5 z-50 3xl:container xl:px-4"
   >
     <div
       class="h-[80px] bg-panel flex items-center justify-between px-5 rounded-[20px]"

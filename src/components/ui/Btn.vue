@@ -1,6 +1,6 @@
 <script setup>
 import VWave from "v-wave";
-import { computed } from "vue";
+
 
 const props = defineProps({
   type: {
@@ -51,8 +51,11 @@ const { vWave } = VWave.createLocalWaveDirective({
 </template>
 
 <style lang="scss" scoped>
+.main{
+  @apply rounded-[20px] bg-main text-black hover:bg-main/[.9];
+}
 .border-accent {
-    @apply border border-main text-main w-[150px] h-[50px] hover:bg-main hover:text-black;
+    @apply border border-main text-main w-[150px] h-[50px] hover:bg-main hover:text-black rounded-[20px];
   }
 
 </style>

@@ -26,7 +26,7 @@ module.exports = {
       white: 'white',
       black: '#000',
       green: '#64ff86',
-      red: '#ff5956',
+      blue: '#38bdf8',
       panel: 'rgb(255 255 255 / 10%)',
       orange: '#ffc107',
       gradient: 'linear-gradient(121.17deg,#263238,#37474f 94.02%)',

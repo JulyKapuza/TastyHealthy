@@ -28,10 +28,10 @@ const clickBtn = () => {
 };
 </script>
 <template>
-  <div class="flex flex-col border border-white/[.1] rounded-[20px]">
-    <img :src="img" class="w-[450px] h-[400px] rounded-tl-[20px] rounded-tr-[20px] " />
+  <div class="flex flex-col border border-white/[.1] rounded-[20px] hover:scale-105 hover:text-main">
+    <img :src="img" class="w-[450px] h-[400px] rounded-tl-[20px] rounded-tr-[20px]" />
     <div
-      class="flex items-center w-full py-2 px-4 border-t border-b border-white/[.1] grow text-lg"
+      class="flex items-center w-full py-2 px-4 border-t border-b border-white/[.1] grow text-lg "
     >
       {{ title }}
     </div>
@@ -39,11 +39,11 @@ const clickBtn = () => {
       <div class="grow border-e border-white/[.1] p-4 text-white/[.3] text-sm">
         <RouterLink
           :to="`/recipe/${query? query: savedQuery}/${index}`"
-          class="p-3 text-main hover:opacity-70"
+          class="p-3 text-white/[.3] text-[20px] hover:text-white  cursor-pointer"
           >View more
         </RouterLink>
       </div>
-      <button class="px-2 text-green" @click="clickBtn(data)">
+      <button class="px-2 text-green cursor-pointer" @click="clickBtn(data)">
         Short info
       </button>
     </div>

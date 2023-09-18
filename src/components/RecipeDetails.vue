@@ -9,7 +9,8 @@ const props = defineProps({
 <template>
   <div class="3xl:container xl:px-4 flex">
     <div class=" my-auto me-10 ">
-      <img :src="details.recipe.image" class="w-[300px] h-[300px] rounded-[20px] " />
+      <img :src="details.recipe.image" class="w-[400px] h-[400px] rounded-[20px] " />
+      <span>{{details.recipe.calories}}</span>
     </div>
     <div class="grid grid-cols-3 gap-5">
    <div
