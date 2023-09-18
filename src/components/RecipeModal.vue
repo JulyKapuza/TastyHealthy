@@ -1,5 +1,5 @@
 <script setup>
-import ModalWindow from "../components/ui/ModalWindow.vue";
+import ModalWindow from "./ui/Modal.vue";
 const props = defineProps({
   isOpen: {
     type: Boolean,
