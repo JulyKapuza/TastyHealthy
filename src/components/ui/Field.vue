@@ -54,7 +54,7 @@ const emitValue = (e) => {
             isFocused || modelValue,
         }"
         class="flex-shrink-0 absolute pointer-events-none text-xs md:text-base"
-        >{{ label }}</span
+        >{{label}}</span
       >
     </div>
   </div>

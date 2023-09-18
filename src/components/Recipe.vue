@@ -35,7 +35,7 @@ watch(query, () => {
 <template>
   <div class="3xl:container xl:px-4">
     <div class="relative">
-      <Field v-model="query" @keydown.enter="search" label="Please" />
+      <Field v-model="query" @keydown.enter="search" :label="$t('enter')" />
       <button @click="search">
         <div class="absolute top-1/4 -translate-y-1/3 end-40 text-white/[.3]">
           <MdIcon name="magnify" size="32" />

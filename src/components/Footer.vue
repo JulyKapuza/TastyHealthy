@@ -10,7 +10,7 @@ const year = computed(() => {
   <footer>
     <div class="3xl:container xl:px-4 w-full">
       <div
-        class="flex flex-col items-center md:flex-row bg-panel py-4 px-4 border-t xl:border-x border-white/[.1]"
+        class="flex flex-col items-center rounded-tl-[20px] rounded-tr-[20px] md:flex-row bg-panel py-4 px-4 border-t xl:border-x border-white/[.1]"
       >
         <div class="flex grow">{{ year }} - TastyHealthy</div>
 

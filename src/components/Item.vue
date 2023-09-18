@@ -28,8 +28,8 @@ const clickBtn = () => {
 };
 </script>
 <template>
-  <div class="flex flex-col border border-white/[.1]">
-    <img :src="img" class="w-[450px] h-[400px]" />
+  <div class="flex flex-col border border-white/[.1] rounded-[20px]">
+    <img :src="img" class="w-[450px] h-[400px] rounded-tl-[20px] rounded-tr-[20px] " />
     <div
       class="flex items-center w-full py-2 px-4 border-t border-b border-white/[.1] grow text-lg"
     >
