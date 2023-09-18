@@ -6,10 +6,14 @@ import RecipeModal from "../components/RecipeModal.vue";
 import { useRecipeStore } from "../stores/recipe.js";
 
 let query = ref("");
+
 const openModalKey = ref(false);
 let selectedItem = ref([]);
 const recipeStore = useRecipeStore();
-recipeStore.getRecipe(query.value);
+if (query.value) {
+  recipeStore.getRecipe(query.value);
+}
+
 
 const search = () => {
   if (query.value.trim() !== "") {
@@ -20,11 +24,11 @@ const modalOpen = (data) => {
   selectedItem.value = data.recipe.ingredients;
   openModalKey.value = true;
 };
-
 watch(query, () => {
   if (query.value === "") {
-    recipeStore.recipe = [];
+  recipeStore.recipe = [];
   }
+  
 });
 </script>
 

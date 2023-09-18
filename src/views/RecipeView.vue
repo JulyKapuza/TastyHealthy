@@ -9,14 +9,21 @@ const router = useRouter();
 const recipeStore = useRecipeStore();
 const query = router.currentRoute.value.params.query;
 const id = router.currentRoute.value.params.id;
-
+localStorage.setItem("query", query);
 recipeStore.getRecipe(query);
+
 const recipe = computed(() => {
   return recipeStore.recipe[id];
 });
+
+const clickBtn = () => {
+  recipeStore.getRecipe(query)
+  router.go(-1)
+}
 </script>
 <template>
   <DefaultLayout>
+     <button @click="clickBtn()">Go back</button>
     <RecipeDetails :details="recipe" />
   </DefaultLayout>
 </template>

@@ -22,7 +22,7 @@ const props = defineProps({
 });
 
 const emits = defineEmits(["clickBtn"]);
-
+const savedQuery = localStorage.getItem("query");
 const clickBtn = () => {
   emits("clickBtn");
 };
@@ -38,7 +38,7 @@ const clickBtn = () => {
     <div class="flex">
       <div class="grow border-e border-white/[.1] p-4 text-white/[.3] text-sm">
         <RouterLink
-          :to="`/recipe/${query}/${index}`"
+          :to="`/recipe/${query? query: savedQuery}/${index}`"
           class="p-3 text-main hover:opacity-70"
           >View more
         </RouterLink>

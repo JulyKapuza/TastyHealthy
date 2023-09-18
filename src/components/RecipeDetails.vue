@@ -1,4 +1,5 @@
 <script setup>
+
 const props = defineProps({
   details: {
     type: Array,
@@ -6,18 +7,21 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="3xl:container xl:px-4 grid grid-cols-2">
-    <!-- <div class="w-[150px]">
-      <img :src="details.recipe.image" class="w-[150px] h-[150px] " />
-    </div> -->
-    <div
-      v-for="item in details.recipe.ingredients"
-      :key="item.food"
-      class="flex  items-center gap-5"
-    >
-      <img :src="item.image" class="w-[150px] h-[150px] me-5" />
-      {{ item.text }}
+  <div class="3xl:container xl:px-4 flex">
+    <div class=" my-auto me-10 ">
+      <img :src="details.recipe.image" class="w-[300px] h-[300px] rounded-[20px] " />
     </div>
+    <div class="grid grid-cols-2 gap-5">
+   <div
+        v-for="item in details.recipe.ingredients"
+        :key="item.food"
+        class="flex items-center gap-5 mb-4"
+      >
+        <img :src="item.image" class="w-[150px] h-[150px] rounded-[20px] me-5" />
+       <div class="w-[200px]">{{ item.text }}</div> 
+      </div>
+    </div>
+   
   </div>
 </template>
 
