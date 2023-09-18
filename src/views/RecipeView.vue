@@ -4,7 +4,7 @@ import DefaultLayout from "../layouts/DefaultLayout.vue";
 import RecipeDetails from "../components/RecipeDetails.vue";
 import { useRecipeStore } from "../stores/recipe.js";
 import { useRouter } from "vue-router";
-
+import Btn from '../components/ui/Btn.vue'
 const router = useRouter();
 const recipeStore = useRecipeStore();
 const query = router.currentRoute.value.params.query;
@@ -23,7 +23,9 @@ const clickBtn = () => {
 </script>
 <template>
   <DefaultLayout>
-     <button @click="clickBtn()">Go back</button>
+    <div class="3xl:container xl:px-4 mb-5">
+  <Btn theme="border-accent" @click="clickBtn()">Go back</Btn>
+    </div>
     <RecipeDetails :details="recipe" />
   </DefaultLayout>
 </template>

@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from "vue-router";
 import VWave from "v-wave";
 import { computed } from "vue";
 
@@ -12,9 +11,6 @@ const props = defineProps({
     type: String,
     default: "main",
   },
-  to: {
-    type: [String, Object],
-  },
   loading: {
     type: Boolean,
     default: false,
@@ -25,23 +21,18 @@ const props = defineProps({
   },
 });
 const { vWave } = VWave.createLocalWaveDirective({
-  duration: props.theme !== "link" ? 0.5 : 0,
-});
-const view = computed(() => {
-  return props.to ? RouterLink : props.type;
-});
+  duration:0.5});
+
 </script>
 
 <template>
-  <component
+  <button
     v-wave
-    :is="view"
     :to="to"
     :type="type"
     :class="[
       theme,
       {
-        'px-5 py-1 h-12': theme !== 'link',
         'opacity-50 pointer-events-none': disabled || loading,
       },
     ]"
@@ -56,31 +47,12 @@ const view = computed(() => {
     >
       <MdIcon name="loading" class="animate-spin" />
     </span>
-  </component>
+  </button>
 </template>
 
 <style lang="scss" scoped>
-// .main {
-//     @apply bg-main text-black hover: bg-main/[.9];
-// }
+.border-accent {
+    @apply border border-main text-main w-[150px] h-[50px] hover:bg-main hover:text-black;
+  }
 
-// .link {
-//     @apply text-main hover: brightness-125;
-// }
-
-// .green {
-//     @apply bg-green text-black hover: brightness-90;
-// }
-
-// .red {
-//     @apply bg-red text-white hover: brightness-90;
-// }
-
-// .transparent {
-//     @apply text-white border border-white/[.1] hover: bg-main;
-// }
-
-// .border-accent {
-//     @apply border border-main text-main hover: bg-main hover:text-black;
-// }
 </style>

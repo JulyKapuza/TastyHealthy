@@ -11,7 +11,7 @@ const props = defineProps({
     <div class=" my-auto me-10 ">
       <img :src="details.recipe.image" class="w-[300px] h-[300px] rounded-[20px] " />
     </div>
-    <div class="grid grid-cols-2 gap-5">
+    <div class="grid grid-cols-3 gap-5">
    <div
         v-for="item in details.recipe.ingredients"
         :key="item.food"
