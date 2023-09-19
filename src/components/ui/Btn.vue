@@ -2,10 +2,6 @@
 import VWave from 'v-wave'
 
 const props = defineProps({
-  type: {
-    type: String,
-    default: 'button'
-  },
   theme: {
     type: String,
     default: 'main'
@@ -27,8 +23,6 @@ const { vWave } = VWave.createLocalWaveDirective({
 <template>
   <button
     v-wave
-    :to="to"
-    :type="type"
     :class="[
       theme,
       {

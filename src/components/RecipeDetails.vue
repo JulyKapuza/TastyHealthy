@@ -1,7 +1,7 @@
 <script setup>
 const props = defineProps({
   details: {
-    type: Array
+    type: Object
   }
 })
 </script>
@@ -25,7 +25,7 @@ const props = defineProps({
       </div>
     </div>
 
-    <div class="grid grid-cols-3 gap-2">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
       <div
         v-for="item in details.recipe.ingredients"
         :key="item.food"

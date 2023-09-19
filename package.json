@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "deploy": "vite build && vite build --base ./ && gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@kyvg/vue3-notification": "^3.0.2",
@@ -28,6 +30,7 @@
     "postcss": "^8.4.29",
     "sass": "^1.66.1",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vite-plugin-gh-pages": "^0.4.1"
   }
 }
