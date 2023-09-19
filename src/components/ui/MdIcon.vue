@@ -1,32 +1,32 @@
 <script setup>
-import * as mdijs from "@mdi/js";
-import { computed } from "vue";
+import * as mdijs from '@mdi/js'
+import { computed } from 'vue'
 const props = defineProps({
   size: {
     type: [Number, String],
-    default: 24,
+    default: 24
   },
   name: {
     type: String,
-    required: true,
+    required: true
   },
   color: {
     type: String,
-    default: "CurrentColor",
-  },
-});
+    default: 'CurrentColor'
+  }
+})
 
 const iconKey = computed(() => {
-  const str = props.name.split("-");
+  const str = props.name.split('-')
   return (
-    "mdi" +
+    'mdi' +
     str
       .map((s) => {
-        return s[0].toUpperCase() + s.slice(1);
+        return s[0].toUpperCase() + s.slice(1)
       })
-      .join("")
-  );
-});
+      .join('')
+  )
+})
 </script>
 
 <template>

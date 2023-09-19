@@ -1,4 +1,15 @@
 {
   "enter": "Please enter ingredient, dish, keyword",
-  "quick_healthy": "quick and healthy recipes"
+  "quick_healthy": "quick and healthy recipes",
+  "name": "Food name",
+  "quantity": "Quantity",
+  "weight": "Weight",
+  "short_info": "Short info",
+  "view_more": "View more",
+  "calories": "Calories",
+  "total_weight": "Total weight",
+  "total_time": "Total time",
+  "terms": "Terms & Conditions",
+  "privacy": "Privacy Policy",
+  "warning_not_dish": "Please enter correct name"
 }

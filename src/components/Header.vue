@@ -1,23 +1,19 @@
 <script setup>
-import Multiselect from "@vueform/multiselect";
-import "@vueform/multiselect/themes/default.css";
-import { ref } from "vue";
-import { useI18n } from "vue-i18n";
+import Multiselect from '@vueform/multiselect'
+import '@vueform/multiselect/themes/default.css'
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const { locale } = useI18n({ useScope: "global" });
-const selectedLocale = ref(locale);
+const { locale } = useI18n({ useScope: 'global' })
+const selectedLocale = ref(locale)
 
 const localeChange = (newLocale) => {
-  selectedLocale.value = newLocale;
-};
+  selectedLocale.value = newLocale
+}
 </script>
 <template>
-  <header
-    class="sticky top-0 pt-0 xl:-top-5 xl:pt-5 z-50 3xl:container xl:px-4"
-  >
-    <div
-      class="h-[80px] bg-panel flex items-center justify-between px-5 rounded-[20px]"
-    >
+  <header class="sticky top-0 pt-0 xl:-top-5 xl:pt-5 z-50 3xl:container xl:px-4">
+    <div class="h-[80px] bg-main flex items-center justify-between px-5 rounded-[20px]">
       <div class="font-logo text-[50px]">Tasty&Healthy</div>
       <div class="w-[250px]">
         <Multiselect
@@ -26,7 +22,7 @@ const localeChange = (newLocale) => {
           :searchable="false"
           :options="[
             { title: 'English', value: 'en' },
-            { title: 'Ukranian', value: 'uk' },
+            { title: 'Ukranian', value: 'uk' }
           ]"
           label="title"
           optionLabel="title"
@@ -51,12 +47,13 @@ const localeChange = (newLocale) => {
   --ms-option-bg-selected-pointed: rgb(255 255 255 / 0.15);
   --ms-option-color-pointed: #fff;
   height: 48px;
+  color: #263238;
 }
 
 .multiselect-dropdown {
   border-radius: 0 0 20px 20px;
   overflow: auto;
-  background: linear-gradient(121.17deg, #083344, #164e63 94.02%);
+  background: #0891b2;
   radius: 20px;
 
   .multiselect-options {

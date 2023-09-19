@@ -1,37 +1,37 @@
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
 const props = defineProps({
   modelValue: {
     type: String,
-    required: true,
+    required: true
   },
   label: {
     type: String,
-    default: "",
+    default: ''
   },
   type: {
     type: String,
-    default: "text",
+    default: 'text'
   },
   nameIcon: {
     type: String,
-    default: "",
-  },
-});
-const isFocused = ref(false);
-const input = ref(null);
+    default: ''
+  }
+})
+const isFocused = ref(false)
+const input = ref(null)
 
 const onFocus = () => {
   if (!props.modelValue) {
-    isFocused.value = true;
+    isFocused.value = true
   }
-};
-const emits = defineEmits(["update:modelValue"]);
+}
+const emits = defineEmits(['update:modelValue'])
 
 const emitValue = (e) => {
-  emits("update:modelValue", e.target.value);
-};
+  emits('update:modelValue', e.target.value)
+}
 </script>
 <template>
   <div
@@ -50,44 +50,43 @@ const emitValue = (e) => {
       />
       <span
         :class="{
-          'text-main -translate-y-6 transition px-0 !text-sm':
-            isFocused || modelValue,
+          ' text-main -translate-y-6 transition px-0 !text-xl': isFocused || modelValue
         }"
-        class="flex-shrink-0 absolute pointer-events-none text-[30px] md:text-xl"
-        >{{label}}</span
+        class="flex-shrink-0 absolute pointer-events-none text-2xl"
+        >{{ label }}</span
       >
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-input[type="number"],
-input[type="number"]:hover,
-input[type="number"]:focus {
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
   appearance: none;
   -moz-appearance: textfield;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-inner-spin-button {
   display: none;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type="date"] {
+input[type='date'] {
   color-scheme: dark;
 }
 </style>

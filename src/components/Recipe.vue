@@ -1,41 +1,50 @@
 <script setup>
-import { ref, watch } from "vue";
-import Item from "../components/Item.vue";
-import Field from "../components/ui/Field.vue";
-import RecipeModal from "../components/RecipeModal.vue";
-import { useRecipeStore } from "../stores/recipe.js";
+import { ref, watch } from 'vue'
+import Item from '@/components/Item.vue'
+import Field from '@/components/ui/Field.vue'
+import RecipeModal from '@/components/RecipeModal.vue'
+import { useRecipeStore } from '@/stores/recipe.js'
+import { useNotification } from '@kyvg/vue3-notification'
+import { i18n } from '/i18n'
 
-let query = ref("");
-
-const openModalKey = ref(false);
-let selectedItem = ref([]);
-const recipeStore = useRecipeStore();
+const { notify } = useNotification()
+let query = ref('')
+const openModalKey = ref(false)
+let selectedItem = ref([])
+let title = ref('')
+const recipeStore = useRecipeStore()
 if (query.value) {
-  recipeStore.getRecipe(query.value);
+  recipeStore.getRecipe(query.value)
 }
 
-
 const search = () => {
-  if (query.value.trim() !== "") {
-    recipeStore.getRecipe(query.value);
+  if (query.value === '') {
+    notify({
+      title: i18n.t('warning_not_enough_dish'),
+      type: 'warning',
+      ignoreDuplicates: true
+    })
   }
-};
+  if (query.value.trim() !== '') {
+    recipeStore.getRecipe(query.value)
+  }
+}
 const modalOpen = (data) => {
-  selectedItem.value = data.recipe.ingredients;
-  openModalKey.value = true;
-};
+  selectedItem.value = data.recipe.ingredients
+  title.value = data.recipe.label
+  openModalKey.value = true
+}
 watch(query, () => {
-  if (query.value === "") {
-  recipeStore.recipe = [];
+  if (query.value === '') {
+    recipeStore.recipe = []
   }
-  
-});
+})
 </script>
 
 <template>
   <div class="3xl:container xl:px-4">
     <div class="text-[20px] flex items-center justify-center mb-5">
-      <span class="font-logo text-[50px]">Tasty&Healthy</span> - {{$t('quick_healthy')}}
+      <span class="font-logo text-[50px]">Tasty&Healthy</span> - {{ $t('quick_healthy') }}
     </div>
     <div class="relative mt-5">
       <Field v-model="query" @keydown.enter="search" :label="$t('enter')" />
@@ -45,13 +54,12 @@ watch(query, () => {
         </div>
       </button>
     </div>
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-3"
-    >
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       <div
         v-for="(item, i) in recipeStore.recipe"
         :key="item.recipe.yield"
-        class="flex"
+        class="flex justify-center"
       >
         <Item
           :img="item.recipe.image"
@@ -68,6 +76,7 @@ watch(query, () => {
       :is-open="openModalKey"
       @modal-close="openModalKey = false"
       :selectedItem="selectedItem"
+      :title="title"
     />
   </div>
 </template>

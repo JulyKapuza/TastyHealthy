@@ -5,14 +5,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write src/"
   },
   "dependencies": {
+    "@kyvg/vue3-notification": "^3.0.2",
     "@mdi/js": "^7.2.96",
     "@vueform/multiselect": "^2.6.2",
     "@vueuse/core": "^10.4.1",
     "i18next": "^23.5.1",
     "pinia": "^2.1.6",
+    "prettier": "^3.0.3",
     "v-wave": "^1.5.1",
     "vue": "^3.3.4",
     "vue-i18n": "^9.4.1",
